@@ -105,11 +105,11 @@ private static final String ADD_DOG_BUTTON_TEXT = "Inscricre un chien...";
 	}
 
 	private void listDogAsked() {
-		this.controller.wantToCreateDog();
+		this.controller.wantToShowListDog();
 	}
 
 	private void addDogAsked() {
-		this.controller.wantToShowListDog();
+		this.controller.wantToCreateDog();
 	}
 
 

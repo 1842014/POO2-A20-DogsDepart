@@ -5,6 +5,7 @@ import dogs.view.WelcomeView;
 
 public class WelcomeController implements IWelcomeController {
 
+	IDogController dogController = new DogController();
 
 	public void startApplication() {;
 		IView welcomeView = new WelcomeView(this);
@@ -13,7 +14,7 @@ public class WelcomeController implements IWelcomeController {
 
 	@Override
 	public void wantToCreateDog() {
-		System.out.println("Create Dog");
+		dogController.goToCreate();
 	}
 
 	@Override
