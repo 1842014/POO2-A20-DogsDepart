@@ -109,7 +109,9 @@ public class DogCreateView extends JDialog implements IView, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.createDog();
+		if(e.getActionCommand().contentEquals(REGISTER_DOG_ACTION)) {
+			this.createDog();
+		}
 	}
 
 }
