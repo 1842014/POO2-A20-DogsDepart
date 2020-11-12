@@ -2,16 +2,22 @@ package dogs.model;
 
 public class Dog {  // La classe est très simple ici mais il pourrait avoir des validations ou des algos plus complexes.
 	
+	private static int numberOfDogs = 0;
 	private int id;
 	private String name;
 	private String breed;  // Idéalement faire une classe Breed (préférer à une enum)
 	
-	public Dog(String name, String breed, String color, int age) {
-		//TODO: calculer l'id --> un no unique pour identifier un chien
+	public Dog(String name, String breed) {
+		this.id = getNextId();
 		this.name = name;
 		this.breed = breed;
 	}
 
+	private int getNextId() {
+		numberOfDogs++;
+		return numberOfDogs;
+	}
+	
 	public int getId() {
 		return this.id;
 	}

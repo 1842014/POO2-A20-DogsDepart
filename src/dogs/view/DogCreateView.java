@@ -9,10 +9,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import dogs.controller.IDogController;
+import dogs.dto.DogDTOFroCreate;
 
 
 public class DogCreateView extends JDialog implements IView, ActionListener {
@@ -102,16 +104,20 @@ public class DogCreateView extends JDialog implements IView, ActionListener {
 		actionPanel.add(button);
 	}
 	
-	private void createDog() {
-		// afficher seulement un message en console
-		System.out.println("Le " + this.breed.getText() + " " + this.name.getText() + " a été inscrit!");
-	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().contentEquals(REGISTER_DOG_ACTION)) {
 			this.createDog();
 		}
+	}
+
+	private void createDog() {
+		DogDTOFroCreate dogDTO = new DogDTOFroCreate(this.name.getText(), this.breed.getText());
+		this.controller.addDog(dogDTO);
+		JOptionPane.showMessageDialog(this, "Le " + breed.getText() + " " + name.getText() + " a été inscrit!");
+		this.setVisible(false);
 	}
 
 }

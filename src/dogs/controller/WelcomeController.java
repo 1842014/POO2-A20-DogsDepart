@@ -5,7 +5,11 @@ import dogs.view.WelcomeView;
 
 public class WelcomeController implements IWelcomeController {
 
-	IDogController dogController = new DogController();
+	private IDogController dogController;
+
+	public WelcomeController(IDogController dogController) {
+		this.dogController = dogController;
+	}
 
 	public void startApplication() {;
 		IView welcomeView = new WelcomeView(this);
