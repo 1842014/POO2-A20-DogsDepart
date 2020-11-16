@@ -10,16 +10,22 @@ import dogs.view.WelcomeView;
 
 public class MainAppDogs {
 
-	private IDogRepository dogRepository = new DogMemoryRepository();
+	private IDogRepository dogRepository;
 	
 	public static void main(String[] args) {
 		new MainAppDogs();
 	}
 
 	public MainAppDogs() {
+		this.dogRepository =  new DogMemoryRepository();
 		this.createControllers();
+		this.seedData();
 	}
 	
+	private void seedData() {
+		new DogDataSeeder(this.dogRepository);
+	}
+
 	private void createControllers() {
 		IDogController dogController = new DogController(dogRepository);
 		

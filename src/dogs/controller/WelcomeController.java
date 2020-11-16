@@ -23,6 +23,6 @@ public class WelcomeController implements IWelcomeController {
 
 	@Override
 	public void wantToShowListDog() {
-		System.out.println("List Dog");
+		dogController.goToList();
 	}
 }

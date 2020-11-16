@@ -117,7 +117,7 @@ public class DogCreateView extends JDialog implements IView, ActionListener {
 		DogDTOFroCreate dogDTO = new DogDTOFroCreate(this.name.getText(), this.breed.getText());
 		this.controller.addDog(dogDTO);
 		JOptionPane.showMessageDialog(this, "Le " + breed.getText() + " " + name.getText() + " a été inscrit!");
-		this.setVisible(false);
+		this.dispose();
 	}
 
 }
