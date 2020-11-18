@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dogs.dto.DogDTOForList;
-import dogs.dto.DogDTOFroCreate;
+import dogs.dto.DogDTOForCreate;
 import dogs.model.Dog;
 import dogs.model.IDogRepository;
 import dogs.view.DogCreateView;
@@ -27,7 +27,7 @@ public class DogController implements IDogController {
 	}
 
 	@Override
-	public void addDog(DogDTOFroCreate dog) {
+	public void addDog(DogDTOForCreate dog) {
 		this.repository.add(new Dog(dog.name, dog.breed));
 	}
 

@@ -4,7 +4,7 @@ import java.util.List;
 
 import dogs.controller.IDogController;
 import dogs.dto.DogDTOForList;
-import dogs.dto.DogDTOFroCreate;
+import dogs.dto.DogDTOForCreate;
 
 public class DogControllerSpy implements IDogController {
 
@@ -19,7 +19,7 @@ public class DogControllerSpy implements IDogController {
 	}
 
 	@Override
-	public void addDog(DogDTOFroCreate dog) {
+	public void addDog(DogDTOForCreate dog) {
 		addDogCalled = true;
 	}
 

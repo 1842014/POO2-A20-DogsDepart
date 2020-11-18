@@ -16,6 +16,7 @@ import javax.swing.SwingConstants;
 import dogs.controller.IWelcomeController;
 import util.image.ImageUtil;
 
+@SuppressWarnings("unused")
 public class WelcomeView extends JFrame implements IView, ActionListener {  
 	
 	private static final String DOGS_LIST_BUTTON_TEXT = "Liste des chiens...";

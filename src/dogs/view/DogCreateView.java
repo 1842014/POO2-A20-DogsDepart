@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import dogs.controller.IDogController;
-import dogs.dto.DogDTOFroCreate;
+import dogs.dto.DogDTOForCreate;
 
 
 public class DogCreateView extends JDialog implements IView, ActionListener {
@@ -34,6 +34,7 @@ public class DogCreateView extends JDialog implements IView, ActionListener {
 	private static final String VIEW_TITLE = "Inscription d'un chien";
 
 
+	@SuppressWarnings("unused")
 	private JTextField id = new JTextField(3);
 	private JTextField name = new JTextField(15);
 	private JTextField breed = new JTextField(20);
@@ -114,7 +115,7 @@ public class DogCreateView extends JDialog implements IView, ActionListener {
 	}
 
 	private void createDog() {
-		DogDTOFroCreate dogDTO = new DogDTOFroCreate(this.name.getText(), this.breed.getText());
+		DogDTOForCreate dogDTO = new DogDTOForCreate(this.name.getText(), this.breed.getText());
 		this.controller.addDog(dogDTO);
 		JOptionPane.showMessageDialog(this, "Le " + breed.getText() + " " + name.getText() + " a été inscrit!");
 		this.dispose();

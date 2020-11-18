@@ -6,7 +6,6 @@ import dogs.controller.IWelcomeController;
 import dogs.controller.WelcomeController;
 import dogs.model.DogMemoryRepository;
 import dogs.model.IDogRepository;
-import dogs.view.WelcomeView;
 
 public class MainAppDogs {
 
@@ -28,7 +27,6 @@ public class MainAppDogs {
 
 	private void createControllers() {
 		IDogController dogController = new DogController(dogRepository);
-		
 		IWelcomeController appController = new WelcomeController(dogController);
 		appController.startApplication();
 	}
