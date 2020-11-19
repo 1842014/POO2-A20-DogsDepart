@@ -12,6 +12,4 @@ public interface IDogController {
 	void addDog(DogDTOForCreate dog);
 
 	void goToList();
-
-	List<DogDTOForList> getDogList();
 }

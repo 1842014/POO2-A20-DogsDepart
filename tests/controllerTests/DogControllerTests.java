@@ -38,13 +38,6 @@ public class DogControllerTests {
 	}
 	
 	@Test
-	public void WHEN_dogControllerIsCreated_WITH_getDogListCalled_THEN_ShouldGoInMethod() {
-		this.controller.getDogList();
-		
-		assertTrue(this.controller.getDogListCalled);
-	}
-	
-	@Test
 	public void WHEN_dogControllerIsCreated_WITH_noMethodCalled_THEN_ShouldNotGoInMethod() {
 		
 		assertFalse(this.controller.goToCreateCalled);

@@ -17,8 +17,8 @@ public class MainAppDogs {
 
 	public MainAppDogs() {
 		this.dogRepository =  new DogMemoryRepository();
-		this.createControllers();
 		this.seedData();
+		this.createControllers();
 	}
 	
 	private void seedData() {

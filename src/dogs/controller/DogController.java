@@ -33,17 +33,12 @@ public class DogController implements IDogController {
 
 	@Override
 	public void goToList() {
-		IView dogListView = new DogListView(this);
-		dogListView.display();
-	}
-
-	@Override
-	public List<DogDTOForList> getDogList() {
 		List<DogDTOForList> dogsDTO = new ArrayList<DogDTOForList>();
 		for(Dog dog : this.repository.getList()) {
 			dogsDTO.add(new DogDTOForList(dog.getId(), dog.getName(), dog.getBreed()));
 		}
-		return dogsDTO;
+		
+		IView dogListView = new DogListView(this, dogsDTO);
+		dogListView.display();
 	}
-
 }

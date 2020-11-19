@@ -27,11 +27,4 @@ public class DogControllerSpy implements IDogController {
 	public void goToList() {
 		goToListCalled = true;
 	}
-
-	@Override
-	public List<DogDTOForList> getDogList() {
-		getDogListCalled = true;
-		return null;
-	}
-
 }

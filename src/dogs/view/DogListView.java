@@ -25,13 +25,17 @@ public class DogListView extends JDialog implements IView, ActionListener {
 	private static final String OK_CLICKED_ACTION = "OK_CLICKED";
 	
 	private IDogController controller;
-	
-	public DogListView(DogController dogController) {
-		controller = dogController;
+	private List<DogDTOForList> dogsDTO;
+
+	public DogListView(DogController dogController, List<DogDTOForList> dogsDTO) {
+		super();
+		
+		this.controller = dogController;
+		this.dogsDTO = dogsDTO;
 		
 		this.initialize();
 		this.setUpComponents();
-		this.pack();
+		this.pack();	
 	}
 
 	@Override
@@ -75,8 +79,7 @@ public class DogListView extends JDialog implements IView, ActionListener {
 	}
 
 	private void addDogs(JPanel listPanel) {
-		List<DogDTOForList> dogs = controller.getDogList();
-		for(DogDTOForList dog : dogs) {
+		for(DogDTOForList dog : this.dogsDTO) {
 			listPanel.add(new JLabel(String.valueOf(dog.id)));
 			listPanel.add(new JLabel(dog.name));
 			listPanel.add(new JLabel(dog.breed));
